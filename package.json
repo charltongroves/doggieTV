@@ -4,7 +4,8 @@
   "description": "watch dog vids with some doggies",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "deploy": "aws s3 sync ./ s3://doggietv.website --delete"
   },
   "repository": {
     "type": "git",
