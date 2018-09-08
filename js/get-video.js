@@ -1,3 +1,24 @@
+const movie_list = [
+	"https://www.youtube.com/watch?v=EI9XLR5Qv7M",
+	"https://www.youtube.com/watch?v=t1r6BmNJX6Y",
+	"https://www.youtube.com/watch?v=BuNRzo9REH8",
+	"https://www.youtube.com/watch?v=4o5baMYWdtQ",
+	"https://www.youtube.com/watch?v=mZpa3nOLOa8",
+	"https://www.youtube.com/watch?v=PbfV_uQvYMc",
+	"https://www.youtube.com/watch?v=OivpEbe1Phc",
+	"https://www.youtube.com/watch?v=9gEdUzE2o34",
+	"https://www.youtube.com/watch?v=dqbqhGNJkAc",
+	"https://www.youtube.com/watch?v=m_CUrv0aezI",
+	"https://www.youtube.com/watch?v=J-QmpswCvrI",
+	"https://www.youtube.com/watch?v=o9ThWRn1miQ",
+	"https://www.youtube.com/watch?v=uEriHIpFqV8",
+	"https://www.youtube.com/watch?v=JWZSPd9ijmo",
+	"https://www.youtube.com/watch?v=hNBn4V11rMg",
+	"https://www.youtube.com/watch?v=vGyHXW0lwZY",
+	"https://www.youtube.com/watch?v=akAo9kjZbhc",
+	"https://www.youtube.com/watch?v=3GRSbr0EYYU",
+	"https://www.youtube.com/watch?v=NZ0zmt49AxU",
+]
 
 if (!Array.prototype.randomElement) {
 	Array.prototype.randomElement = function () {
@@ -32,7 +53,7 @@ $(function () {
 		var videos = [], played = [];
 
 		var get_api_call = function (time, sort) {
-			return `https://www.reddit.com/r/InterdimensionalCable/search.json?q=site%3Ayoutube.com+OR+site%3Ayoutu.be&restrict_sr=on&sort=${sort}&t=${time}&limit=50`;
+			return `https://www.reddit.com/r/woof_irl/search.json?q=site%3Ayoutube.com+OR+site%3Ayoutu.be&restrict_sr=on&sort=${sort}&t=${time}&limit=50`;
 		};
 
 		var add_youtube_url = function (reddit_post_data) {
@@ -83,9 +104,12 @@ $(function () {
 				setTimeout(load_videos, 5000);
 			});
 		};
-
-		load_posts();
-
+		var initialise_vids = function () {
+			movie_list.map( function (vid) {
+				add_youtube_url({"url": vid, score: 100, "permalink": vid})
+			}.bind(this))
+		}
+		initialise_vids();
 		var get_next_post = function () {
 			// We ran out of videos
 			// Reddit is likely off
@@ -147,7 +171,7 @@ $(function () {
 
 			setTimeout(function () {
 
-				background_animation.play();
+				// background_animation.play();
 
 				last_time_id = setTimeout(function () {
 					callback.apply(this, callback_args);

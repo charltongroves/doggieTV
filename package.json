@@ -1,0 +1,24 @@
+{
+  "name": "doggie-tv",
+  "version": "1.0.0",
+  "description": "watch dog vids with some doggies",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charltongroves/doggieTV.git"
+  },
+  "keywords": [
+    "dogs",
+    "tv",
+    "fun"
+  ],
+  "author": "Charlton Groves",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/charltongroves/doggieTV/issues"
+  },
+  "homepage": "https://github.com/charltongroves/doggieTV#readme"
+}

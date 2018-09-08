@@ -124,7 +124,7 @@ ul li {
 }
 body {
     overflow: hidden;
-    background: rgb(181, 213, 179);
+    background: #d5c5b9;
 /*    cursor: url(../images/rick-hand-64.png) 10 2, url(../images/rick-hand-small.png) 20 2, auto;*/
 }
 body * {
@@ -178,10 +178,10 @@ html[data-useragent*=Firefox] #video:before {
 }
 
 #video {
-    width: 36.8%;
-    top: 25.2%;
+    width: 22.7%;
+    top: 17.75%;
     position: absolute;
-    left: calc(52.25%);
+    left: calc(47.65%);
     transform: translateX(-50.1%);
     z-index: 1;
 }
@@ -490,12 +490,13 @@ html[data-useragent*=Firefox] .menu-overlay #video::before {
     z-index: 5;
 }
 .remote-area{
-    position: fixed;
-    display: block;
+    opacity: 0;
+    width: 22.7%;
+    top: 9.7vw;
+    position: absolute;
+    left: calc(71%);
+    transform: translateX(-50.1%);
     z-index: 5;
-    bottom: -325px;
-    right: 20px;
-    transition: .24s ease-out 1s;
 }
 .tv-on .remote-area{
     bottom: -360px;
@@ -538,7 +539,27 @@ html[data-useragent*=Firefox] .menu-overlay #video::before {
     -webkit-clip-path: inset(0% 0 0% 0%);
     clip-path: inset(0% 0 0% 0%);
 }
-
+.tv-buttons-container {
+  display: grid;
+  grid-template-columns: 25%, 25%;
+  grid-template-rows: 25%, 25%;
+}
+.pwr {
+  grid-column: 1;
+  grid-row: 1;
+}
+.ch {
+  grid-column: 2;
+  grid-row: 1;
+}
+.vup {
+  grid-column: 1;
+  grid-row: 2;
+}
+.vdown {
+  grid-column: 2;
+  grid-row: 2;
+}
 .remote .top-row, .remote .matrix, .remote .bottom{
     display: flex;
     justify-content: space-between;
@@ -554,27 +575,27 @@ html[data-useragent*=Firefox] .menu-overlay #video::before {
 .remote .button{
     background: #1E2626;
     color: #F2F2F2;
-    padding: 5px;
+    padding: 0.25vw;
     line-height: 1;
     font-size: 15px;
-    border-radius: 100%;
-    min-width: 50px;
-    min-height: 18px;
+    border-radius: 40%;
+    width: 1.4vw;
+    height: 1.45vw;
     text-align: center;
     display: inline-block;
-    margin-bottom: 10px
+    margin-bottom: 0.7vw;
 }
 .button.red{
     background: darkred;
 }
 .remote-area .remote{
-    width: 200px;
-    height: 400px;
+    width: 5.1vw;
+    height: 200px;
     position: relative;
     background: #d0d9d8;
     border-radius: 12% 12% 0 0 / 4% 4% 0 0;
     box-sizing: border-box;
-    padding: 5px
+    padding: 0.2vw;
 }
 .button{
     pointer-events: none;
@@ -599,8 +620,8 @@ html[data-useragent*=Firefox] .menu-overlay #video::before {
     flex-shrink: 0;
 }
 .button.large{
-    height: 85px;
-    min-width: 35px;
+    width: 1.40vw;
+    height: 2.47vw;
     flex-flow: 0;
     flex-shrink: 0;
     line-height: 20px;

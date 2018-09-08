@@ -42,50 +42,19 @@ TODO: Opengraph meta data to make things look nice when finished
 
 <body class="tv-off">
     <div class="remote-area">
-        <div class="tips">
-            <ul>
-                <li><b>Power Button</b>: Turns TV On/Off</li>
-                <li><b>Zoom</b>: Zooms the TV in or out for a better view</li>
-                <li><b>MENU</b>: Shows the TV menu which gives you a list of previously played shows and info about the site</li>
-                <li><b>MUTE</b>: Mutes the TV's audio</li>
-                <li><b>CH +</b>: Changes the channel</li>
-                <li><b>VOL +/-</b>: Adjusts the TV's volume</li>
-                <li><b>OK</b>: Opens the current video's Reddit thread in a new tab</li>
-                <li><b>NO SIGNAL</b>: Reddit's API is down. Turn your TV On and Off again to see if the signal is back</li>
-            </ul>
-        </div>
         <div class="remote">
-            <div class="top-row">
-                <span class="button red" id="power">Pwr</span>
-                <span class="button" id="zoom">Zoom</span>
-            </div>
-            <div class="matrix">
-                <span class="button">1</span>
-                <span class="button">2</span>
-                <span class="button">3</span>
-                <span class="button">4</span>
-                <span class="button">5</span>
-                <span class="button">6</span>
-                <span class="button">7</span>
-                <span class="button">8</span>
-                <span class="button">9</span>
-                <span class="button" id="menu">Menu</span>
-                <span class="button">0</span>
-                <span class="button" id="mute">Mute</span>
-            </div>
-            <div class="bottom">
-                <span class="button wide" id="channel-up">CH +</span>
-                <span class="button large" id="volume-down"><span>VOL<br/>-</span></span>
-                <a href="#" class="button center red" id="video-url">OK</a>
-                <span class="button large" id="volume-up"><span>VOL<br/>+</span></span>
-                <span class="button wide"></span>
-            </div>
+          <div class="tv-buttons-container">
+            <span class="button pwr large" id="power"></span>
+            <span class="button ch large" id="channel-up"></span>
+            <span class="button vup" id="volume-up"><span><br/></span></span>
+            <span class="button vdown" id="volume-down"><span><br/></span></span>
+          </div>
         </div>
     </div>
     <div class="container">
         <!--        <img src="images/Rick-morty-tv.png" alt="Rick and Morty TV Background" class="rick-bg">-->
-        <video src="video/rick-tv.webm" class="rick-bg" id="rick-bg" preload>
-        </video>
+        <img src="video/doggie-tv.png" alt="Rick and Morty TV Background" class="rick-bg" id="rick-bg" preload>
+        </img>
         <audio src="audio/tvoff.mp3" id="off-audio" preload></audio>
         <audio src="audio/channel-switch.mp3" id="switch-audio" preload></audio>
         <audio src="" id="quote-player"></audio>
@@ -140,24 +109,6 @@ TODO: Opengraph meta data to make things look nice when finished
         //I'm lazy and don't wanna set target="_blank" on all those links
         var thisSite = window.location.hostname;
         $('a[href^="http://"], a[href^="https://"]').not('a[href^="http://' + thisSite + '"], a[href^="https://' + thisSite + '"]').attr('target', '_blank');
-
-    </script>
-    <script>
-        (function(i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function() {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-        ga('create', 'UA-20916585-7', 'auto');
-        ga('send', 'pageview');
-
     </script>
 
 </body>
